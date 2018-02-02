@@ -13,11 +13,11 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 public class SpringCloudConsumerApplication {
 
-	@Bean
+	/*@Bean
 	@LoadBalanced
 	public RestTemplate createRestTemplate() {
 		return new RestTemplate();
-	}
+	}*/
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCloudConsumerApplication.class, args);
