@@ -12,18 +12,23 @@ import com.netflix.discovery.EurekaClient;
 @RestController
 public class ConsumerController {
 	
-	/*@Autowired
-	private RestTemplate restTemplate;*/
 	@Autowired
-	private ProviderFeignClient providerFeignClient;
+	private RestTemplate restTemplate;
+	/*@Autowired
+	private ProviderFeignClient providerFeignClient;*/
 	
 	/*@Autowired
 	private EurekaClient discoveryClient;*/
 	 
-	@GetMapping(value = "/getproviderinfo")
+	/*@GetMapping(value = "/getproviderinfo")
     public String getproviderinfo() {
         return providerFeignClient.hello();
-    }
+    }*/
+	
+	@GetMapping(value = "/getproviderinfo1")
+	public String getproviderinfo1() {
+		return restTemplate.getForObject("http://SPRING-CLOUD-PROVIDER/hello", String.class);
+	}
 	
 	/*private String getHomePageUrl(String providerName)
 	{
