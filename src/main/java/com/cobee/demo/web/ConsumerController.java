@@ -27,6 +27,7 @@ public class ConsumerController {
 	
 	@GetMapping(value = "/getproviderinfo1")
 	public String getproviderinfo1() {
+		System.out.println(restTemplate.hashCode());
 		return restTemplate.getForObject("http://SPRING-CLOUD-PROVIDER/hello", String.class);
 	}
 	

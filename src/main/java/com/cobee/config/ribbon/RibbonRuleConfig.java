@@ -1,4 +1,4 @@
-package com.cobee.config;
+package com.cobee.config.ribbon;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;

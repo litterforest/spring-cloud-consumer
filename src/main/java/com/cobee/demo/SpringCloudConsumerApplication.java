@@ -13,8 +13,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.web.client.RestTemplate;
 
-import com.cobee.config.RibbonRuleConfig;
-import com.cobee.demo.config.ribbon.MyRibbonConfiguration;
+import com.cobee.config.ribbon.RibbonRuleConfig;
+
 
 @SpringBootApplication
 @EnableEurekaClient
@@ -30,8 +30,8 @@ public class SpringCloudConsumerApplication {
 	}
 	
 	public static void main(String[] args) {
+		
 		ConfigurableApplicationContext ctx = SpringApplication.run(SpringCloudConsumerApplication.class, args);
-//		System.out.println(ctx.getBean(RibbonRuleConfig.class));
-//		System.out.println(ctx.getBean(MyRibbonConfiguration.class));
+		
 	}
 }
