@@ -16,6 +16,9 @@ public class ConsumerController {
 	
 //	@Autowired
 //	private RestTemplate restTemplate;
+	/**
+	 * 使用feign客户端
+	 */
 	@Autowired
 	private ProviderFeignClient providerFeignClient;
 //	@Autowired
