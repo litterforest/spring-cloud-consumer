@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import com.cobee.demo.feign.ProviderFeignClient;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 public class ConsumerController {
@@ -28,9 +29,14 @@ public class ConsumerController {
 	private EurekaClient discoveryClient;*/
 	
 	@GetMapping(value = "/getproviderinfo")
+//	@HystrixCommand(fallbackMethod = "getproviderinfoFallback")
     public String getproviderinfo() {
         return providerFeignClient.hello();
     }
+	
+	public String getproviderinfoFallback() {
+		return "This is a hystrix fallback.";
+	}
 	
 //	@GetMapping(value = "/getproviderinfo1")
 //	public String getproviderinfo1() {

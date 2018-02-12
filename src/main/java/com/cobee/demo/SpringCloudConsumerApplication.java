@@ -3,6 +3,7 @@ package com.cobee.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -23,6 +24,7 @@ import com.cobee.config.ribbon.RibbonRuleConfig;
 @EnableFeignClients
 //@EnableAutoConfiguration
 @EnableDiscoveryClient
+@EnableCircuitBreaker
 //@RibbonClients({@RibbonClient(name = "spring-cloud-provider", configuration = RibbonRuleConfig.class), @RibbonClient(name = "spring-cloud-provider2", configuration = RibbonRuleConfig.class)})
 public class SpringCloudConsumerApplication {
 
